@@ -10,7 +10,7 @@ export default function StoryItem(props) {
                     src={props.image}
                 />
             </div>
-            <p className='text-sm w-12 truncate'>{props.name}</p>
+            <p className='text-xs w-16 truncate'>{props.name}</p>
         </div>
     )
 }
