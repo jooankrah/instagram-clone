@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import React from 'react'
-import { HomeIcon, MenuIcon, SearchIcon } from '@heroicons/react/solid'
+import { HomeIcon, SearchIcon } from '@heroicons/react/solid'
 import { HeartIcon, PaperAirplaneIcon, PlusCircleIcon, UserGroupIcon } from '@heroicons/react/outline'
 export default function Header() {
     return (
         <div className='shadow-sm bg-white border-b sticky top-0 z-50 pt-4 pb-4 md:pt-0 md:pb-0'>
-            <div className='flex justify-between bg-white max-w-6xl mx-5 xl:mx-auto'>
+            <div className='flex justify-between bg-white max-w-4xl mx-5 xl:mx-auto'>
                 {/**left */}
                 <>
-                    <div className='relative inline-grid w-24'>
+                    <div className='relative inline-grid w-20 md:w-24'>
                         <Image
                             src={'https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png'}
                             layout='fill'
@@ -31,12 +31,12 @@ export default function Header() {
                     <input
                         className='bg-gray-50 border-gray-300 block w-full pl-10 sm:text-sm focus:ring-black focus:border-black rounded-sm'
                         type={'text'}
-                        placeholder='search' />
+                        placeholder='search'
+                    />
                 </div>
                 {/**right */}
                 <div className='flex items-center justify-end space-x-4'>
                     <HomeIcon className='navIcons' />
-                    <MenuIcon className='h-6 md:hidden' />
                     <div className='inline-flex relative cursor-pointer'>
                         <PaperAirplaneIcon className='navIcons rotate-45' />
                         <div className='absolute -top-2 -right-1 text-xs animate-pulse bg-red-500 rounded-full w-5 h-5 flex items-center justify-center text-white'>3</div>
