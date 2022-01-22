@@ -7,8 +7,12 @@ export default function Home() {
     <div className=''>
       <Head>
         <title>Instagram Clone by The Jooankrah</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+        </link>
       </Head>
-      <div className='bg-gray-100 h-screen'>
+      <div className='bg-gray-100'>
         {/**header goes here */}
         <Header />
 
