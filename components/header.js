@@ -76,7 +76,7 @@ export default function Header() {
                                                             />
                                                         </div>
                                                         <div>
-                                                            <p className='text-sm font-bold cursor-pointer'>theJooankrah {" "}<span><BadgeCheckIcon className='h-4 text-blue-600' /></span></p>
+                                                            <p className='flex items-center text-sm font-bold cursor-pointer'>theJooankrah {" "}<BadgeCheckIcon className='h-4 text-blue-600 ml-2' /></p>
                                                             <p className='text-sm text-gray-500 cursor-pointer'>Jonathan Nsiah</p>
                                                         </div>
                                                     </div>
