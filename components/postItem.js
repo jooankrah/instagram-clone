@@ -80,11 +80,13 @@ export default function PostItem(props) {
                 <div className='inset-y-0 flex items-center pointer-events-none'>
                     <EmojiHappyIcon className='h-7 w-7 text-gray-700' />
                 </div>
-                <input
-                    className='flex-1 bg-transparent sm:text-sm outline-none border-none focus:outline-none focus:ring-0'
-                    type={'text'}
+                <textarea
+                    className='flex-1 bg-transparent sm:text-sm outline-none border-none focus:outline-none focus:ring-0 max-h-20 resize-none text-justify overflow-hidden h-[40px]'
                     placeholder='Add a comment...'
-                />
+                    autoComplete='off'
+                    autoCorrect='off'
+                >
+                </textarea>
                 <button className='font-normal text-blue-400'>Post</button>
             </div>
         </div>
