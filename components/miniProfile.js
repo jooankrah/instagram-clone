@@ -1,6 +1,8 @@
+import { useSession, signOut } from 'next-auth/react'
 import React from 'react'
 
 export default function MiniProfile() {
+    const { data: session } = useSession()
     return (
         <div>
             <div className='flex items-center'>
@@ -8,16 +10,16 @@ export default function MiniProfile() {
                     <div className='relative w-16 h-16 p-1 mr-3 cursor-pointer'>
                         <img
                             className='rounded-full'
-                            src={'https://pbs.twimg.com/profile_images/1296568929209458689/xLXGAOC1_400x400.jpg'}
+                            src={session.user.image}
                         />
                     </div>
                     <div>
                         <p className='text-sm font-bold cursor-pointer'>theJooankrah</p>
-                        <p className='text-sm text-gray-500 cursor-pointer'>Jonathan Nsiah</p>
+                        <p className='text-sm text-gray-500 cursor-pointer'>{session.user.name}</p>
                     </div>
                 </div>
                 <div>
-                    <button className='text-xs text-blue-400 font-medium'>
+                    <button className='text-xs text-blue-400 font-medium' onClick={() => signOut()}>
                         Sign Out
                     </button>
                 </div>
