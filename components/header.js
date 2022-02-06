@@ -3,10 +3,12 @@ import React, { useState } from 'react'
 import { BadgeCheckIcon, HomeIcon, SearchIcon } from '@heroicons/react/solid'
 import { HeartIcon, PaperAirplaneIcon, PlusCircleIcon, UserGroupIcon, XIcon } from '@heroicons/react/outline'
 import { useLayer, Arrow } from "react-laag";
-
+import { useSession, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 export default function Header() {
-
+    const { data: session } = useSession()
+    const router = useRouter()
     const [isOpen, setOpen] = useState(false);
     const { renderLayer, triggerProps, layerProps, arrowProps } =
         useLayer({
@@ -76,7 +78,7 @@ export default function Header() {
                                                             />
                                                         </div>
                                                         <div>
-                                                            <p className='text-sm font-bold cursor-pointer'>theJooankrah {" "}<span><BadgeCheckIcon className='h-4 text-blue-600' /></span></p>
+                                                            <p className='flex items-center text-sm font-bold cursor-pointer'>Jonathan Nsiah{" "}<BadgeCheckIcon className='h-4 text-blue-600 ml-2' /></p>
                                                             <p className='text-sm text-gray-500 cursor-pointer'>Jonathan Nsiah</p>
                                                         </div>
                                                     </div>
@@ -97,7 +99,7 @@ export default function Header() {
                 </div>
                 {/**right */}
                 <div className='flex items-center justify-end space-x-4'>
-                    <HomeIcon className='navIcons' />
+                    <HomeIcon className='navIcons' onClick={() => router.push('/')} />
                     <div className='inline-flex relative cursor-pointer'>
                         <PaperAirplaneIcon className='navIcons rotate-45' />
                         <div className='absolute -top-2 -right-1 text-xs animate-pulse bg-red-500 rounded-full w-5 h-5 flex items-center justify-center text-white'>3</div>
@@ -105,12 +107,12 @@ export default function Header() {
                     <PlusCircleIcon className='navIcons' />
                     <UserGroupIcon className='navIcons' />
                     <HeartIcon className='navIcons' />
-                    <div className='relative w-7 h-7 cursor-pointer hover:scale-125 transition-all duration-150 ease-out'>
-                        <Image
+                    <div className='relative w-7 h-7 cursor-pointer hover:scale-125 transition-all duration-150 ease-out' onClick={() => signOut()}>
+                        <img
                             className='rounded-full'
-                            src={'https://pbs.twimg.com/profile_images/1296568929209458689/xLXGAOC1_400x400.jpg'}
+                            src={session.user.image}
+                            alt={session.user.name}
                             layout='fill'
-                            objectFit='contain'
                         />
                     </div>
                 </div>
