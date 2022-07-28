@@ -1,5 +1,6 @@
 import Feed from '../components/feed'
 import Header from '../components/header'
+import UploadModal from '../components/uploadModal'
 
 export default function Home() {
 
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
 
       {/**main section starts here */}
+      <UploadModal />
       <Feed />
     </div>
   )

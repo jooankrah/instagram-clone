@@ -29,7 +29,7 @@ export default function Header() {
             <div className='flex justify-between bg-white max-w-4xl mx-5 xl:mx-auto'>
                 {/**left */}
                 <>
-                    <div className='relative inline-grid w-20 md:w-24'>
+                    <div className='relative inline-grid w-20 md:w-24 cursor-pointer' onClick={() => router.push('/')}>
                         <Image
                             src={'https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png'}
                             layout='fill'
